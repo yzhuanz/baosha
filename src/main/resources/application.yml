@@ -3,4 +3,22 @@ spring:
     cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.248.110:3306/seckill?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: P@ssw0rd
+    hikari:
+      pool-name: DaateHikariCP
+      minimum-idle: 5
+      idle-timeout: 10
+      auto-commit: true
+      max-lifetime: 180000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
 
+mybatis-plus:
+    mapper-locations: classpath*/mapper/*Mapper.xml
+    type-aliases-package: com.example.baosha.pojo
+
+logging:
+  level:
+    com.example.baosha.mapper: debug
