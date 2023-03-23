@@ -45,6 +45,10 @@ public class CodeGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("yzhuanz");
         gc.setOpen(false);
+        //xml开启 BaseResultMap
+        gc.setBaseResultMap(true);
+        //xml 开启BaseColumnList
+        gc.setBaseColumnList(true);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
@@ -83,7 +87,8 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "/src/main/resources/mapper/"
+                        + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -105,7 +110,7 @@ public class CodeGenerator {
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
 
-        // 配置模板
+//        // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
 
         // 配置自定义输出模板
@@ -113,6 +118,12 @@ public class CodeGenerator {
         // templateConfig.setEntity("templates/entity2.java");
         // templateConfig.setService();
         // templateConfig.setController();
+//        TemplateConfig templateConfig = new TemplateConfig()
+//                .setEntity("templates/entity.java")
+//                .setMapper("templates/mapper.java")
+//                .setService("templates/service.java")
+//                .setServiceImpl("templates/serviceImpl.java")
+//                .setController("templates/controller.java");
 
         templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
