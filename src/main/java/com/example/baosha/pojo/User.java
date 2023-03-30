@@ -1,19 +1,12 @@
-package com.example.baosha.entity;
+package com.example.baosha.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author yzhuanz
- * @since 2023-03-23
- */
+import java.io.Serializable;
+import java.util.Date;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_user")
@@ -22,18 +15,17 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 昵称
+     * 用户ID，手机号码
      */
+    private Long id;
+
     private String nickname;
 
     /**
-     * 密码
+     * MD5(MD5(pass明文+固定salt)+salt)
      */
     private String password;
 
-    /**
-     * 盐
-     */
     private String slat;
 
     /**
@@ -44,12 +36,12 @@ public class User implements Serializable {
     /**
      * 注册时间
      */
-    private LocalDateTime registerDate;
+    private Date registerDate;
 
     /**
      * 最后一次登录时间
      */
-    private LocalDateTime lastLoginDate;
+    private Date lastLoginDate;
 
     /**
      * 登录次数

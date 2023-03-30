@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+/**
+ * 登录
+
+ */
 @Controller
 @RequestMapping("/login")
 @Slf4j
@@ -26,12 +30,6 @@ public class LoginController {
 	 *
 	 * @param:
 	 * @return:
-	 *
-	 * 乐字节：专注线上IT培训
-	 * 答疑老师微信：lezijie
-	 *
-	 * @since: 1.0.0
-	 * @Author: zhoubin
 	 */
 	@RequestMapping("/toLogin")
 	public String toLogin(){
@@ -41,14 +39,7 @@ public class LoginController {
 	/**
 	 * 功能描述: 登录功能
 	 *
-	 * @param:
-	 * @return:
-	 *
-	 * 乐字节：专注线上IT培训
-	 * 答疑老师微信：lezijie
-	 *
-	 * @since: 1.0.0
-	 * @Author: zhoubin
+
 	 */
 	@RequestMapping("/doLogin")
 	@ResponseBody

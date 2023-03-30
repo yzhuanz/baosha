@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.baosha.pojo")
+@MapperScan("com.example.baosha.mapper")
 public class BaoshaApplication {
 
     public static void main(String[] args) {
